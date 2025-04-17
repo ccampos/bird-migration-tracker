@@ -28,7 +28,4 @@ Clone the repo and install dependencies:
 git clone https://github.com/YOUR_USERNAME/bird-migration-tracker.git
 cd bird-migration-tracker
 npm install
-
-Start the local development server:
-```bash
 ng serve
