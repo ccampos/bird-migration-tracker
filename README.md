@@ -1,59 +1,34 @@
-# BirdMigrationTracker
+# 🕊️ Bird Migration Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.8.
+An interactive demo app built with Angular 17, Angular Material, and the ArcGIS JavaScript API.  
+Displays real-time bird migration routes using real-world coordinates with animated map transitions and custom visuals.
 
-## Development server
+## 🌟 Features
 
-To start a local development server, run:
+- Standalone Angular components with clean data flow (`@Input`/`@Output`)
+- Live ESRI map with dynamic markers and migration lines
+- Real bird migration data: origin → destination
+- Angular Material UI with card-based layout
+- Clean, responsive design with SCSS
+- Built under 2.5-day deadline for recruiter-facing demo
 
+## 🛠️ Tech Stack
+
+- Angular 17 (standalone components)
+- Angular Material
+- TypeScript + SCSS
+- ArcGIS JS API via `@arcgis/core`
+- ES Modules, modern Angular tooling
+
+## 🚀 Getting Started
+
+Clone the repo and install dependencies:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/bird-migration-tracker.git
+cd bird-migration-tracker
+npm install
+
+Start the local development server:
 ```bash
 ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.

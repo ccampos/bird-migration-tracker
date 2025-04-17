@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+	<span>Bird Migration Tracker</span>
+</mat-toolbar>
+
+<div class="layout-content">
+	<app-map [route]="selectedRoute"></app-map>
+	<app-bird-list (birdSelected)="onBirdSelected($event)"></app-bird-list>
+</div>

@@ -1,0 +1,8 @@
+<mat-card *ngFor="let bird of birds" class="bird-card" (click)="selectBird(bird)">
+	<mat-card-title>{{ bird.name }}</mat-card-title>
+	<mat-card-subtitle>{{ bird.species }}</mat-card-subtitle>
+	<mat-card-content>
+		<p><strong>Region:</strong> {{ bird.region }}</p>
+		<p><strong>Season:</strong> {{ bird.season }}</p>
+	</mat-card-content>
+</mat-card>
