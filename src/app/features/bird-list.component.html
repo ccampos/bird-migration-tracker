@@ -1,8 +1,11 @@
-<mat-card *ngFor="let bird of birds" class="bird-card" (click)="selectBird(bird)">
-	<mat-card-title>{{ bird.name }}</mat-card-title>
-	<mat-card-subtitle>{{ bird.species }}</mat-card-subtitle>
-	<mat-card-content>
-		<p><strong>Region:</strong> {{ bird.region }}</p>
-		<p><strong>Season:</strong> {{ bird.season }}</p>
-	</mat-card-content>
+<mat-card class="bird-card" *ngFor="let bird of birds" (click)="selectBird(bird)" [ngClass]="{ 'active': selectedBird?.name === bird.name }">
+	<div class="bird-card-content">
+		<img class="bird-image" [src]="getBirdImagePath(bird.name)" alt="{{ bird.name }}" />
+		<div class="bird-info">
+			<h3>{{ bird.name }}</h3>
+			<p><strong><em>{{ bird.species }}</em></strong></p>
+			<p><strong>Region:</strong> {{ bird.region }}</p>
+			<p><strong>Season:</strong> {{ bird.season }}</p>
+		</div>
+	</div>
 </mat-card>

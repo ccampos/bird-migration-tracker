@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "bird-migration-tracker-ccampos"
+  },
+  "targets": {
+    "bird-migration-tracker-ccampos": {
+      "hosting": {
+        "bird-claudiocampos-com": [
+          "bird-claudiocampos-com"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

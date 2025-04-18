@@ -1,8 +1,14 @@
 <mat-toolbar color="primary">
 	<span>Bird Migration Tracker</span>
+	<span class="spacer"></span>
+	<a mat-button href="https://claudiocampos.com" target="_blank">Portfolio</a>
 </mat-toolbar>
 
+<p *ngIf="showTooltip" class="tooltip-message">
+	<span class="bouncy-emoji">👇🏼</span> Click a bird card to begin the journey!
+</p>
+
 <div class="layout-content">
-	<app-map [route]="selectedRoute"></app-map>
-	<app-bird-list (birdSelected)="onBirdSelected($event)"></app-bird-list>
+	<app-map [selectedBird]="clickedBird"></app-map>
+	<app-bird-list (birdSelected)="selectBird($event)"></app-bird-list>
 </div>

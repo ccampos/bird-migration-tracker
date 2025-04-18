@@ -1,0 +1,36 @@
+.bird-card {
+	margin: 0 auto;
+	max-width: 414px;
+	margin-bottom: 16px;
+	cursor: pointer;
+	transition: transform 0.2s ease;
+	border: 2px solid transparent;
+	transition: border 0.2s ease;
+
+	&.active {
+		border: 2px solid #1976d2; // highlight blue border
+		background-color: #e3f2fd; // optional subtle background
+	}
+
+	&:hover {
+		transform: scale(1.01);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+	}
+
+	.bird-card-content {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	.bird-image {
+		width: 80px;
+		margin-left: 15px;
+		object-fit: cover;
+		border-radius: 8px;
+	}
+
+	.bird-info {
+		flex: 1;
+	}
+}

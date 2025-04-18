@@ -1,0 +1,17 @@
+{
+	"hosting": {
+		"target": "bird-claudiocampos-com",
+		"public": "dist/bird-migration-tracker/browser",
+		"ignore": [
+			"firebase.json",
+			"**/.*",
+			"**/node_modules/**"
+		],
+		"rewrites": [
+			{
+				"source": "**",
+				"destination": "/index.html"
+			}
+		]
+	}
+}
