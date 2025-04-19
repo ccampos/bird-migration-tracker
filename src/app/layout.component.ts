@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { BirdListComponent } from './features/bird-list.component';
 import { MapComponent } from './features/map.component';
 import { Bird } from './models/bird.model';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-layout',
@@ -26,6 +28,13 @@ import { Bird } from './models/bird.model';
 export class LayoutComponent {
   clickedBird: Bird | null = null;
   showTooltip = true;
+
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer) {
+    this.iconRegistry.addSvgIcon(
+      'github',
+      this.sanitizer.bypassSecurityTrustResourceUrl('assets/github.svg')
+    )
+  }
 
   selectBird(bird: Bird) {
     this.clickedBird = bird;

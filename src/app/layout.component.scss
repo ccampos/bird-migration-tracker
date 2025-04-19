@@ -33,19 +33,41 @@
 	animation: bounce 1s infinite ease-in-out;
 	transform-origin: bottom center;
 }
-  
+
 @keyframes pulseBg {
-	0%   { background-color: #fff3cd; }
-	50%  { background-color: #ffe08a; }
-	100% { background-color: #fff3cd; }
+	0% {
+		background-color: #fff3cd;
+	}
+
+	50% {
+		background-color: #ffe08a;
+	}
+
+	100% {
+		background-color: #fff3cd;
+	}
 }
 
 @keyframes pulseScale {
-	0%, 100% { transform: scale(1); }
-	50%      { transform: scale(1.05); }
+
+	0%,
+	100% {
+		transform: scale(1);
+	}
+
+	50% {
+		transform: scale(1.05);
+	}
 }
 
 @keyframes bounce {
-	0%, 100% { transform: translateY(0); }
-	50%      { transform: translateY(-6px); }
+
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-6px);
+	}
 }
