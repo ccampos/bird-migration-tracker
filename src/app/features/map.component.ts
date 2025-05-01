@@ -9,6 +9,7 @@ import * as geometryEngine from '@arcgis/core/geometry/geometryEngine';
 import Polyline from '@arcgis/core/geometry/Polyline';
 import Point from '@arcgis/core/geometry/Point';
 import TextSymbol from '@arcgis/core/symbols/TextSymbol';
+import { arcticTernTrack } from '../data/arcticTernTrack_fullYear';
 
 @Component({
   selector: 'app-map',
@@ -40,7 +41,26 @@ export class MapComponent implements OnInit, OnChanges {
       zoom: 3
     });
 
-    const currentMonth = new Date().getMonth();
+    const todayPoint = this.getTodayPosition();
+
+    if (todayPoint) {
+      const marker = new Graphic({
+        geometry: {
+          type: 'point',
+          longitude: todayPoint.lon,
+          latitude: todayPoint.lat
+        },
+        symbol: {
+          type: 'simple-marker',
+          color: todayPoint.isEstimated ? 'gray' : 'blue',
+          size: '12px',
+          outline: { color: 'white', width: 1 }
+        }
+      });
+
+      this.graphicsLayer.add(marker);
+      this.mapView.goTo({ center: [todayPoint.lon, todayPoint.lat], zoom: 4 });
+    }
   }
 
   ngOnChanges(): void {
@@ -150,5 +170,15 @@ export class MapComponent implements OnInit, OnChanges {
 
       step++;
     }, 50);
+  }
+
+  private getTodayPosition() {
+    const today = new Date();
+    const start = new Date(today.getFullYear(), 0, 0);
+    const diff = today.getTime() - start.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
+
+    return arcticTernTrack.find(p => p.day === dayOfYear);
   }
 }
