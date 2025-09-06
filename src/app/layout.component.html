@@ -1,10 +1,24 @@
-<mat-toolbar color="primary">
-	<span>Bird Migration Tracker</span>
+<mat-toolbar color="primary" class="cc-nav">
+	<!-- Brand -->
+	<a routerLink="/" class="cc-brand" aria-label="Home">
+		<span class="cc-brand-logo">CC</span>
+		<span class="cc-brand-name">Bird Migration Tracker</span>
+	</a>
+
 	<span class="spacer"></span>
-	<a mat-button href="https://claudiocampos.com" target="_blank">Portfolio</a>
-	<a mat-icon-button href="https://github.com/ccampos/bird-migration-tracker" target="_blank"
-		aria-label="GitHub Repo">
-		<mat-icon svgIcon="github"></mat-icon>
+
+	<!-- Links -->
+	<a mat-button routerLink="/">Home</a>
+	<a mat-button href="https://claudiocampos.com" target="_blank" rel="noopener">Portfolio</a>
+
+	<!-- Icons -->
+	<a mat-icon-button href="https://www.linkedin.com/in/claudiojcampos/" target="_blank" rel="noopener"
+		aria-label="LinkedIn">
+		<img src="../assets/InBug-White.png" alt="LinkedIn" class="cc-icon" />
+	</a>
+	<a mat-icon-button href="https://github.com/ccampos/bird-migration-tracker" target="_blank" rel="noopener"
+		aria-label="GitHub">
+		<img src="../assets/github-mark-white.png" alt="GitHub" class="cc-icon" />
 	</a>
 </mat-toolbar>
 

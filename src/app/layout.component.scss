@@ -71,3 +71,86 @@
 		transform: translateY(-6px);
 	}
 }
+
+/* ===== Claudio global nav tokens (scoped to this component) ===== */
+:host {
+	--cc-surface: rgba(12, 12, 14, 0.6);
+	--cc-border: rgba(255, 255, 255, 0.08);
+	--cc-text: #eaeaf0;
+	--cc-accent: #7aa2ff;
+	--cc-active-bg: rgba(122, 162, 255, 0.14);
+	--cc-blur: 14px;
+}
+
+/* Sticky + glassy toolbar (overrides Angular Material primary bg) */
+.cc-nav.mat-toolbar.mat-primary {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: var(--cc-surface) !important;
+	/* override Material color */
+	color: var(--cc-text);
+	border-bottom: 1px solid var(--cc-border);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+	padding-inline: 0.75rem;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+	.cc-nav.mat-toolbar.mat-primary {
+		backdrop-filter: saturate(140%) blur(var(--cc-blur));
+	}
+}
+
+/* Brand (CC pill + product name) */
+.cc-brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+	text-decoration: none;
+	color: var(--cc-text);
+
+	&-logo {
+		width: 32px;
+		height: 32px;
+		border-radius: 40%;
+		display: grid;
+		place-items: center;
+		font-size: 1rem;
+		font-weight: 800;
+		letter-spacing: 0.5px;
+		background: linear-gradient(135deg, var(--cc-accent), #6be1ff);
+		color: #0b1020;
+		box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);;
+	}
+
+	&-name {
+		font-weight: 700;
+		font-size: 1.05rem;
+		letter-spacing: 0.2px;
+	}
+}
+
+/* Links + icons */
+a[mat-button] {
+	color: var(--cc-text) !important;
+	text-transform: none;
+	font-weight: 500;
+	border-radius: 999px;
+
+	&:hover {
+		background: var(--cc-active-bg);
+	}
+}
+
+.cc-icon {
+	width: 22px;
+	height: 22px;
+	filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+/* Mobile tweaks */
+@media (max-width: 880px) {
+	.cc-brand-name {
+		font-size: 1rem;
+	}
+}
